@@ -1,0 +1,182 @@
+[SceneFile]
+Type=filename
+Label=Scene Filename
+Category=Scene File
+Index=0
+Description=The scene filename as it exists on the network
+Required=false
+DisableIfBlank=true
+
+[Version]
+Type=label
+Label=Version
+Index=0
+Category=Cinema 4D Info
+Description=The version of Cinema 4D to render with
+Required=false
+DisableIfBlank=true
+
+[Build]
+Type=enum
+Values=None;32bit;64bit
+Label=Cinema 4D Build To Force
+Category=Cinema 4D Info
+Index=1
+Description=The build of Cinema 4D to force
+Required=false
+DisableIfBlank=true
+
+[Threads]
+Type=integer
+Minimum=0
+Label=Threads
+Index=2
+Category=Cinema 4D Info
+Description=Number of threads to use (specify 0 to automatically use the optimal thread count)
+Required=false
+DisableIfBlank=true
+
+[NoOpenGL]
+Type=boolean
+Label=Disable OpenGL
+Index=3
+Category=Cinema 4D Info
+Description=Disable OpenGL and avoid loading OpenGL libraries. If you are not using the Hardware OpenGL renderer, checking this option reduces the Cinema 4D startup time.
+Required=false
+DisableIfBlank=true
+
+[Width]
+Type=integer
+Minimum=0
+Label=Image Width
+Category=Output Resolution
+Index=0
+Description=The width of the image in pixels
+Required=false
+DisableIfBlank=true
+
+[Height]
+Type=integer
+Minimum=0
+Label=Image Height
+Category=Output Resolution
+Index=1
+Description=The height of the image in pixels
+Required=false
+DisableIfBlank=true
+
+[FilePath]
+Type=folder
+Label=Output File Path
+Category=Output
+Index=0
+Description=An existing directory where the output will be sent
+Required=false
+DisableIfBlank=false
+DefaultValue=
+
+[FilePrefix]
+Type=string
+Label=Output File Prefix
+Category=Output
+Index=1
+Description=The output filename prefix
+Required=false
+DisableIfBlank=false
+DefaultValue=
+
+[MultiFilePath]
+Type=folder
+Label=MP Output File Path
+Category=Output
+Index=2
+Description=An existing directory where the multipass output will be sent
+Required=false
+DisableIfBlank=false
+DefaultValue=
+
+[MultiFilePrefix]
+Type=string
+Label=MP Output File Prefix
+Category=Output
+Index=3
+Description=The multipass output filename prefix
+Required=false
+DisableIfBlank=false
+DefaultValue=
+
+[LocalRendering]
+Type=boolean
+Label=Enable Local Rendering
+Category=Output
+Index=4
+Description=If this option is set to true, the Workers will render locally, and then copy the images to the network output directory on completion.
+Required=false
+DisableIfBlank=true
+
+[Take]
+Type=string
+Label=Take Name
+Category=Output
+Index=5
+Description=The name of the take to render. 
+Required=false
+DisableIfBlank=true
+
+[EnableFrameStep]
+Type=boolean
+Label=Enable Frame Step
+Category=Output
+Index=6
+Description=If this option is set to true, then a frame step will be set when renderingand some frames will be skipped.
+Required=false
+DisableIfBlank=true
+
+[FrameStep]
+Type=integer
+Minimum=2
+Label=Frame Step
+Category=Output
+Index=7
+Description=The Frame step to be used when enable frame step is set to true.
+Required=false
+DisableIfBlank=true
+
+[Renderer]
+Type=enum
+Values=;ArnoldExport
+Label=Export Renderer
+Category=Export Options
+Index=0
+Description=The renderer that will be used to do the export.
+Required=false
+DisableIfBlank=true
+
+[ExportFile]
+Type=filenamesave
+Label=Export File Location
+Category=Export Options
+Index=1
+Description=The location that C4D will export to.
+Required=false
+DisableIfBlank=true
+
+[GPUsPerTask]
+Type=integer
+Minimum=0
+Maximum=16
+Label=GPUs Per Task
+Category=GPU Options
+Index=0
+Description=The number of GPUs to use per task. If set to 0, the default number of GPUs will be used.
+Required=false
+DisableIfBlank=true
+
+[GPUsSelectDevices]
+Type=string
+Label=Select GPU Devices
+Category=GPU Options
+Index=1
+Description=A comma separated list of the GPU devices to use specified by device Id. 'GPUs Per Task' will be ignored.
+Required=false
+DisableIfBlank=true
